@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import "./output.css";
+import LoginComponent from "./routes/Login";
 
+
+// import {BrowserRouter, Routes, Route } from "react-router-dom";
+// npm instal
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="w-screen h-screen">
+    <BrowserRouter>
+ 
+    <Routes>
+      <Route path = "/" element = {<HelloComponent />}/>
+      <Route path ="/login" element = {<LoginComponent/>} />
+    </Routes>
+    
+    </BrowserRouter>
     </div>
   );
 }
+
+const HelloComponent = () => {
+  return <div>This is hello from component</div>;
+};
 
 export default App;
